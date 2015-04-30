@@ -1,0 +1,22 @@
+{
+  "name": "countly-hipchat",
+  "title": "Hip Chat",
+  "version": "0.1.0",
+  "description": "Allow Countly to send notificaiton via HipChat",
+  "author": "Count.ly",
+  "homepage": "https://count.ly/marketplace/",
+  "repository" :{ "type" : "git", "url" : "http://github.com/Countly/countly-server.git"},
+  "bugs":{ "url" : "http://github.com/Countly/countly-server/issues"},
+  "keywords": [
+    "countly",
+    "analytics",
+    "mobile",
+    "screen",
+    "chat",
+    "notifications"
+  ],
+  "dependencies": {
+      "hipchat-client": "*"
+  },
+  "private": true
+}

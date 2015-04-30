@@ -1,0 +1,93 @@
+<table id="user-table" cellspacing="0" class="d-table">
+	<thead>
+		<tr>
+			<th style="width: 90px;" data-localize="hipchat.table.header.roomName">Room Name</th>
+			<th data-localize="hipchat.table.header.applicationName">Application Name</th>
+			<th data-localize="hipchat.table.header.authToken">Room Auth Token</th>
+			<th style="width: 90px;" data-localize="hipchat.table.header.actionsButtons">Actions</th>
+		</tr>
+	</thead>
+			<tbody>
+				 {{#eachOfObjectValue userRooms}}
+				<tr class="app_{{this.app_id}}">
+					<td class="hipchat-room-name">{{this.name}}</td>
+					<td class="hipchat-application-name">{{this.app_name}}</td>
+					<td class="hipchat-room-token">{{this.authToken}}</td>
+					<td>
+						<div>
+							<span class="user-email"><a href="#" class="hipchat-edit-room" data-value="{{this.app_id}}">Edit</a> | <a href="#" class="hipchat-delete-room" data-value="{{this.app_id}}">Delete</a></span>
+						</div>
+					</td>
+				</tr>
+				{{/eachOfObjectValue}}
+				<tr>
+					<td colspan="4">
+						<div><a href="#" class="create-new-room-button" data-localize="hipchat.button.createNewRoom">Create a new room</a></div>
+					</td>
+				</tr>
+				<tr class="user-details" style="display: table-row;">
+					<td colspan="4">
+						<div>
+							<div style="overflow: visible;" class="row help-zone-vs" data-help-localize="hipchat.field.rooms">
+							<div class="title" data-help-localize="hipchat.field.rooms">Room</div>
+							<div class="detail hipchat-room-dropdown" style="position: relative;">
+								<div class="cly-select" style="width:220px;" >
+								     <div class="select-inner">
+								      <div class="text-container">
+								       <div class="text">{{active_room}}</div>
+								      </div>
+								      <div class="right combo"></div>
+								     </div>
+								     <div class="select-items square" style="width:220px;">
+								      <div>
+								      
+								      
+								       {{#eachOfObjectValue hipchatRoomList.rooms}}
+								       <div data-value="{{this.room_id}}" class="segmentation-option item">{{this.name}}</div>
+								       {{/eachOfObjectValue}}
+								      </div>
+								     </div>
+								    </div>
+							    </div>
+
+							 </div>   
+							<div style="overflow: visible;" class="row help-zone-vs" data-help-localize="hipchat.table.header.applicationName">
+								<div class="title" data-localize="hipchat.table.header.applicationName">Application</div>
+								<div class="detail hipchat-application-dropdown" style="position: relative;">
+									<div class="cly-select" style="width:220px; " >
+							     	<div class="select-inner">
+							      	<div class="text-container">
+							       	<div class="text">{{active_application}}</div>
+								      </div>
+								      <div class="right combo"></div>
+								     </div>
+								     <div class="select-items square" style="width:220px;">
+								      <div>
+								       {{#eachOfObjectValue appList}}
+								       <div data-value="{{this._id}}" class="segmentation-option item">{{this.name}}</div>
+								       {{/eachOfObjectValue}}
+								      </div>
+								     </div>
+								    </div>
+								</div>
+							</div>
+						
+							<div class="row help-zone-vs" data-help-localize="hipchat.field.roomAuthToken">
+								<div class="title" data-localize="hipchat.field.roomAuthToken">Auth token</div>
+								<div class="detail"><input id="hipchat-room-auth-token" type="text" value="{{authToken}}"></div>
+							</div>
+							
+							<div class="button-container">
+								<input type="hidden" id="hipchat-room-id" value="{{room_id}}" name="room_id" />
+								<input type="hidden" id="hipchat-room-name" value="{{room_name}}" name="room_name" />
+								<input type="hidden" id="hipchat-app-name" value="{{app_name}}" name="app_name" />
+								<input type="hidden" id="hipchat-app-id" value="{{app_id}}" name="app_id" />
+								<a class="icon-button light save-hipchat-room" data-localize="hipchat.form.save">Save</a>
+								<a class="icon-button light cancel-hipchat-room" data-localize="hipchat.form.cancel" >Cancel</a>
+								
+							</div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>

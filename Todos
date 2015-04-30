@@ -1,0 +1,27 @@
+Todos
+=============
+
+1. First installation it should not fetch HipChat API because there is no such token exists - done
+2. HipChat Admin token should be save before creating rooms as it is pre-requisite - done
+3. Validation for the form fields.
+4. Create rooms appears when Admin Token has been saved - done
+5. Delete room and edit room auth token - done
+6. App strictly belongs to one room
+7. UI fixes for the HipChat plugin - done
+8. If there is no room then there should be a message to create room - done
+9. Spelling should be correct and consistent - done
+10. Restructured Document map with object {app_id:{
+	room_id: value,
+	app_name: value,
+	............................
+	..........................
+}}  - done
+
+11. Build API and model call to API - done
+12. Register with events are as follows:
+	i. New Event
+	ii. New User
+	iii. User session ended
+	iv. IAP Event
+
+					
